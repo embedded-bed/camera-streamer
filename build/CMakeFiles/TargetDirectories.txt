@@ -1,0 +1,3 @@
+/home/sebas/camera-streamer/build/CMakeFiles/camera-streamer.dir
+/home/sebas/camera-streamer/build/CMakeFiles/edit_cache.dir
+/home/sebas/camera-streamer/build/CMakeFiles/rebuild_cache.dir

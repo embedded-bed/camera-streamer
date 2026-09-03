@@ -1,0 +1,25 @@
+services:
+  go2rtc:
+    image: alexxit/go2rtc:latest
+    restart: unless-stopped
+    privileged: true
+    environment:
+      TZ: ${TZ:-Europe/Copenhagen}
+    volumes:
+      - ./go2rtc:/config
+    network_mode: host
+
+  camera-streamer:
+    restart: unless-stopped
+    depends_on:
+      - go2rtc
+    environment:
+      TZ: ${TZ:-Europe/Copenhagen}
+    volumes:
+      - ./bin:/bin
+    working_dir: /bin
+    command:
+      - bash
+      - -lc
+      - exec ./build/camera-streamer
+    network_mode: host
