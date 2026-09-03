@@ -1,0 +1,11 @@
+streams:
+  camera:
+
+rtsp:
+  listen: ":8554"
+
+api:
+  listen: ":1984"
+
+webrtc:
+  listen: ":8555"
