@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/sebas/camera-streamer/build",
-  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -isystem /usr/include/opencv4 -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /usr/include/sysprof-6 -isystem /usr/include/orc-0.4 -std=c++20 -pthread -o CMakeFiles/camera-streamer.dir/src/main.cpp.o -c /home/sebas/camera-streamer/src/main.cpp",
-  "file": "/home/sebas/camera-streamer/src/main.cpp",
-  "output": "CMakeFiles/camera-streamer.dir/src/main.cpp.o"
-}
-]
