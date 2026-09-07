@@ -23,6 +23,7 @@ int main(int argc, char* argv[])
     /*
      * RTSP -> H264 -> raw BGR -> appsink
      */
+    /*
     const std::string input_pipeline_description =
         "rtspsrc "
         "location=rtsp://192.168.1.100:8554/input "
@@ -36,6 +37,20 @@ int main(int argc, char* argv[])
             "format=BGR,"
             "width=1920,"
             "height=1080 ! "
+        "appsink "
+            "name=input_sink "
+            "max-buffers=1 "
+            "drop=true "
+            "sync=false";
+    */
+
+    // videotestsrc pattern=snow ! video/x-raw,width=1280,height=720 ! autovideosink
+    /*
+     * Video Test Source -> appsink
+     */
+    const std::string input_pipeline_description =
+        "videotestsrc is-live=true pattern=snow ! "
+        "video/x-raw,format=BGR,width=1920,height=1080,framerate=30/1 ! "
         "appsink "
             "name=input_sink "
             "max-buffers=1 "
@@ -201,7 +216,6 @@ int main(int argc, char* argv[])
             stride);
 
         cv::Mat frame = gst_frame.clone();
-
         gst_buffer_unmap(buffer, &map);
         gst_sample_unref(sample);
 

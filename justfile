@@ -31,6 +31,11 @@ run-compose:
     docker compose up -d
     docker compose logs -f -n 100
 
+# Stop docker compose
+stop-compose:
+    docker compose stop
+
+
 # Get logs from docker compose
 log:
     docker compose logs -f -n 100

@@ -10,16 +10,14 @@ services:
     network_mode: host
 
   camera-streamer:
+    image: camera-streamer-builder
+    pull_policy: never
     restart: unless-stopped
     depends_on:
       - go2rtc
     environment:
       TZ: ${TZ:-Europe/Copenhagen}
     volumes:
-      - ./bin:/bin
-    working_dir: /bin
-    command:
-      - bash
-      - -lc
-      - exec ./build/camera-streamer
+      - ./bin:/app
+    command: /bin/bash -c /app/camera-streamer
     network_mode: host
